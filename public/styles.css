@@ -1,0 +1,721 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
+
+.hero {
+    height: 100vh;
+    background: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), url('wedding-bg.jpg') center/cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 4rem;
+    margin-bottom: 1rem;
+    color: #2c3e50;
+}
+
+.date {
+    font-size: 1.5rem;
+    letter-spacing: 3px;
+    color: #666;
+}
+
+section {
+    padding: 5rem 2rem;
+    text-align: center;
+}
+
+.invitation {
+    background-color: #f9f9f9;
+}
+
+.details {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    flex-wrap: wrap;
+}
+
+.detail-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    min-width: 300px;
+}
+
+.rsvp {
+    background-color: #f9f9f9;
+}
+
+form {
+    max-width: 500px;
+    margin: 2rem auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+input,
+textarea {
+    padding: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-family: inherit;
+}
+
+button {
+    background-color: #2c3e50;
+    color: white;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #34495e;
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 3rem;
+    }
+    .details {
+        gap: 1.5rem;
+    }
+    .detail-card {
+        min-width: 250px;
+    }
+}
+
+.location-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    text-decoration: none;
+    color: #2c3e50;
+    padding: 0.5rem;
+    border-radius: 5px;
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+.location-link:hover {
+    background-color: rgba(44, 62, 80, 0.1);
+}
+
+.location-link:active {
+    transform: scale(0.95);
+}
+
+.map-icon {
+    font-size: 1.2rem;
+}
+
+.detail-card p {
+    margin-bottom: 0.5rem;
+}
+
+.detail-card a p {
+    margin-bottom: 0;
+}
+
+.dress-code {
+    background-color: #f9f9f9;
+    padding: 5rem 2rem;
+}
+
+.dress-code-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.color-palette {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.color-circle {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.color-circle:hover {
+    transform: scale(1.1);
+}
+
+.dress-code-description {
+    font-size: 1.1rem;
+    color: #2c3e50;
+    margin: 2rem 0;
+    line-height: 1.8;
+}
+
+.dress-code-examples {
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+}
+
+.example-item {
+    flex: 1;
+    min-width: 250px;
+    background: white;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.example-item h4 {
+    color: #2c3e50;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+.example-item p {
+    color: #666;
+    line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+    .color-circle {
+        width: 45px;
+        height: 45px;
+    }
+    .dress-code-examples {
+        gap: 1.5rem;
+    }
+}
+
+.photo-share {
+    background-color: white;
+    padding: 5rem 2rem;
+}
+
+.share-description {
+    max-width: 600px;
+    margin: 1.5rem auto;
+    color: #666;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.social-link {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+    color: #2c3e50;
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    background-color: #f9f9f9;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.social-link:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.social-link:active {
+    transform: translateY(0);
+}
+
+.messenger-icon {
+    width: 24px;
+    height: 24px;
+    fill: currentColor;
+}
+
+.telegram {
+    color: #0088cc;
+}
+
+.whatsapp {
+    color: #25D366;
+}
+
+@media (max-width: 768px) {
+    .social-links {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+    .social-link {
+        width: 80%;
+        justify-content: center;
+    }
+}
+
+.countdown-section {
+    padding: 4rem 2rem;
+    background-color: white;
+    text-align: center;
+}
+
+.couple-photo {
+    max-width: 300px;
+    margin: 0 auto 2rem;
+}
+
+.couple-photo img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 50%;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.countdown-container {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.countdown-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 100px;
+}
+
+.countdown-item span:first-child {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #2c3e50;
+    font-family: 'Cormorant Garamond', serif;
+}
+
+.countdown-label {
+    font-size: 1rem;
+    color: #666;
+    margin-top: 0.5rem;
+}
+
+@media (max-width: 768px) {
+    .countdown-container {
+        gap: 1rem;
+    }
+    .countdown-item {
+        min-width: 70px;
+    }
+    .countdown-item span:first-child {
+        font-size: 2rem;
+    }
+    .countdown-label {
+        font-size: 0.8rem;
+    }
+}
+
+.message {
+    padding: 1rem;
+    margin: 1rem auto;
+    max-width: 500px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.message.success {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.message.error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+.photo-rules {
+    padding: 60px 0;
+    background-color: #f9f9f9;
+}
+
+.photo-rules-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.photo-rules-content > div {
+    margin-bottom: 25px;
+}
+
+.info-section {
+    padding: 80px 0;
+    background-color: #faf9f8;
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.info-card {
+    background-color: white;
+    border-radius: 20px;
+    padding: 40px;
+    height: 100%;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+}
+
+.info-card:hover {
+    transform: translateY(-5px);
+}
+
+.info-title {
+    font-size: 28px;
+    color: #2c3e50;
+    margin-bottom: 30px;
+    text-align: center;
+    position: relative;
+}
+
+.info-title:after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(to right, #ff9a9e, #fad0c4);
+    margin: 15px auto 0;
+    border-radius: 2px;
+}
+
+.icon-wrapper {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.icon-wrapper i {
+    font-size: 40px;
+    color: #ff9a9e;
+}
+
+.important-notice {
+    background-color: #fff5f5;
+    border-radius: 15px;
+    padding: 20px;
+    margin-bottom: 25px;
+    border-left: 4px solid #ff9a9e;
+}
+
+.important-notice p {
+    color: #e74c3c;
+    font-weight: 500;
+    margin: 0;
+}
+
+.photo-suggestions,
+.telegram-sharing,
+.thank-you,
+.flowers-text p {
+    margin-bottom: 20px;
+    line-height: 1.8;
+    color: #34495e;
+}
+
+
+.flowers {
+    padding: 60px 0;
+    
+}
+
+.flowers-content {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    text-align: center;
+}
+
+
+
+.qr-code {
+    max-width: 200px;
+    margin: 30px auto 0;
+    padding: 15px;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+.qr-code img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+@media (max-width: 768px) {
+    .info-grid {
+        grid-template-columns: 1fr;
+        padding: 0 20px;
+    }
+
+    .info-card {
+        padding: 30px;
+    }
+
+    .info-title {
+        font-size: 24px;
+    }
+
+    .qr-code {
+        max-width: 150px;
+    }
+}
+
+.attendance-options {
+    margin-top: 30px ;
+}
+
+.attendance-options h3 {
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 1.2em;
+    color: #333;
+}
+
+.checkbox-wrapper {
+    margin: 15px 0;
+}
+
+.custom-checkbox {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding: 10px;
+    transition: all 0.3s ease;
+}
+
+.custom-checkbox:hover {
+    background-color: rgba(0, 0, 0, 0.02);
+}
+
+.custom-checkbox input {
+    display: none;
+}
+
+.checkbox-mark {
+    width: 24px;
+    height: 24px;
+    border: 2px solid #ddd;
+    border-radius: 6px;
+    margin-right: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.checkbox-mark:after {
+    content: '';
+    width: 12px;
+    height: 12px;
+    background-color: var(--primary-color, #42aaff);
+    border-radius: 3px;
+    opacity: 0;
+    transition: all 0.2s ease;
+}
+
+.custom-checkbox input:checked + .checkbox-mark {
+    border-color: var(--primary-color, #42aaff);
+}
+
+.custom-checkbox input:checked + .checkbox-mark:after {
+    opacity: 1;
+}
+
+.checkbox-label {
+    font-size: 16px;
+    color: #333;
+}
+
+/* Адаптивность для мобильных устройств */
+@media (max-width: 768px) {
+    .attendance-options h3 {
+        font-size: 1.1em;
+    }
+
+    .checkbox-mark {
+        width: 20px;
+        height: 20px;
+    }
+
+    .checkbox-mark:after {
+        width: 10px;
+        height: 10px;
+    }
+
+    .checkbox-label {
+        font-size: 14px;
+    }
+}
+
+
+.details {
+    padding: 80px 0;
+    background-color: #faf9f8;
+}
+
+.details .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.details-grid-top {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.details-grid-bottom {
+    margin-top: 30px;
+}
+
+.detail-card {
+    background: white;
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+}
+
+.detail-card:hover {
+    transform: translateY(-5px);
+}
+
+.card-icon {
+    font-size: 40px;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.detail-card h3 {
+    font-size: 24px;
+    color: #2c3e50;
+    margin-bottom: 20px;
+}
+
+.card-content {
+    color: #34495e;
+    line-height: 1.6;
+}
+
+.time {
+    font-size: 28px;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+.address, .location, .restaurant {
+    margin-bottom: 10px;
+}
+
+/* Стили для карточки банкета */
+.banquet-card .card-content-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    align-items: center;
+}
+
+.card-image {
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.card-image img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.card-image img:hover {
+    transform: scale(1.05);
+}
+
+/* Медиа-запросы для адаптивности */
+@media (max-width: 968px) {
+    .details-grid-top {
+        grid-template-columns: 1fr;
+    }
+
+    .banquet-card .card-content-wrapper {
+        grid-template-columns: 1fr;
+    }
+
+    .card-image img {
+        height: 200px;
+    }
+}
+
+@media (max-width: 480px) {
+    .detail-card {
+        padding: 25px;
+    }
+
+    .time {
+        font-size: 24px;
+    }
+
+    .detail-card h3 {
+        font-size: 20px;
+    }
+}
+
+
+.time-grid {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    gap: 0px;
+}
+
+
+.gathering, .ceremony-start {
+    text-align: center;
+}

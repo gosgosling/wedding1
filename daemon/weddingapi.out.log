@@ -1,0 +1,69 @@
+Сервер запущен на порту 3000
+Сервер запущен на порту 3000
+Сервер запущен на порту 3000
+Сервер запущен на порту 3000
+Сервер запущен на порту 3000
+Сервер запущен на порту 3000
+Received data: {
+  name: 'weeee',
+  guests: '3',
+  comments: 'eerr',
+  ceremony_attendance: true,
+  banquet_attendance: false
+}
+Ceremony attendance: true
+Banquet attendance: false
+Saving RSVP: {
+  id: 1740933122049,
+  name: 'weeee',
+  guests: 3,
+  comments: 'eerr',
+  ceremony_attendance: true,
+  banquet_attendance: false,
+  timestamp: '2025-03-02T16:32:02.049Z'
+}
+Received data: {
+  name: 'Карина ',
+  guests: '1',
+  comments: 'Мужа не забыть',
+  ceremony_attendance: true,
+  banquet_attendance: true
+}
+Ceremony attendance: true
+Banquet attendance: true
+Saving RSVP: {
+  id: 1740933172127,
+  name: 'Карина ',
+  guests: 1,
+  comments: 'Мужа не забыть',
+  ceremony_attendance: true,
+  banquet_attendance: true,
+  timestamp: '2025-03-02T16:32:52.127Z'
+}
+Received data: {
+  name: 'Владислав',
+  guests: '1',
+  comments: 'вам',
+  ceremony_attendance: true,
+  banquet_attendance: true
+}
+Ceremony attendance: true
+Banquet attendance: true
+Saving RSVP: {
+  id: 1740941432539,
+  name: 'Владислав',
+  guests: 1,
+  comments: 'вам',
+  ceremony_attendance: true,
+  banquet_attendance: true,
+  timestamp: '2025-03-02T18:50:32.539Z'
+}
+Received data: {
+  name: 'вамвам',
+  guests: '1',
+  comments: '',
+  ceremony_attendance: false,
+  banquet_attendance: false
+}
+Ceremony attendance: false
+Banquet attendance: false

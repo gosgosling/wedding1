@@ -1,0 +1,34 @@
+2025-02-08 15:43:53 - Starting C:\Program Files\nodejs\node.exe  D:\Nginx\nginx-1.27.4\Wedding\node_modules\node-windows\lib\wrapper.js --file D:\Nginx\nginx-1.27.4\Wedding\server.js --scriptoptions= --log "Wedding API wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2025-02-08 15:43:53 - Started 15492
+2025-02-28 06:59:12 - Stopping weddingapi.exe
+2025-02-28 06:59:12 - ProcessKill 15492
+2025-02-28 06:59:12 - Shutdown exception
+Message:Идет завершение работы системы.
+
+Stacktrace:   в System.Runtime.InteropServices.Marshal.ThrowExceptionForHRInternal(Int32 errorCode, IntPtr errorInfo)
+   в System.Management.ManagementScope.InitializeGuts(Object o)
+   в System.Management.ManagementScope.Initialize()
+   в System.Management.ManagementObjectSearcher.Initialize()
+   в System.Management.ManagementObjectSearcher.Get()
+   в winsw.WrapperService.GetChildPids(Int32 pid)
+   в winsw.WrapperService.StopProcessAndChildren(Int32 pid)
+   в winsw.WrapperService.StopIt()
+   в winsw.WrapperService.OnShutdown()
+2025-02-28 06:59:41 - Starting C:\Program Files\nodejs\node.exe  D:\Nginx\nginx-1.27.4\Wedding\node_modules\node-windows\lib\wrapper.js --file D:\Nginx\nginx-1.27.4\Wedding\server.js --scriptoptions= --log "Wedding API wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2025-02-28 06:59:41 - Started 5780
+2025-02-28 07:00:15 - Stopping weddingapi.exe
+2025-02-28 07:00:15 - ProcessKill 5780
+2025-02-28 07:00:16 - Shutdown exception
+Message:Идет завершение работы системы.
+
+Stacktrace:   в System.Runtime.InteropServices.Marshal.ThrowExceptionForHRInternal(Int32 errorCode, IntPtr errorInfo)
+   в System.Management.ManagementScope.InitializeGuts(Object o)
+   в System.Management.ManagementScope.Initialize()
+   в System.Management.ManagementObjectSearcher.Initialize()
+   в System.Management.ManagementObjectSearcher.Get()
+   в winsw.WrapperService.GetChildPids(Int32 pid)
+   в winsw.WrapperService.StopProcessAndChildren(Int32 pid)
+   в winsw.WrapperService.StopIt()
+   в winsw.WrapperService.OnShutdown()
+2025-02-28 07:00:42 - Starting C:\Program Files\nodejs\node.exe  D:\Nginx\nginx-1.27.4\Wedding\node_modules\node-windows\lib\wrapper.js --file D:\Nginx\nginx-1.27.4\Wedding\server.js --scriptoptions= --log "Wedding API wrapper" --grow 0.25 --wait 1 --maxrestarts 3 --abortonerror n --stopparentfirst undefined
+2025-02-28 07:00:42 - Started 5808
