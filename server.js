@@ -8,7 +8,7 @@ const path = require('path');
 const app = express();
 const port = 3000;
 const nodemailer = require('nodemailer'); // Добавляем nodemailer
-const config  = require('./config');
+//const config  = require('./config');
 
 const bot = new TelegramBot(process.env.TELEGRAM_BOT_TOKEN, { polling: false });
 const TELEGRAM_CHAT_ID = process.env.TELEGRAM_CHAT_ID;
