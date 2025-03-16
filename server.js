@@ -1,6 +1,6 @@
 //require('dotenv').config();
 const TelegramBot = require('node-telegram-bot-api');
-//require('dotenv').config();
+require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
 const fs = require('fs').promises;
