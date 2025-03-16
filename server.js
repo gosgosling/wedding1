@@ -97,8 +97,10 @@ app.post('/api/rsvp', async(req, res) => {
 
         // Настройки письма
         const mailOptions = {
-            from: config.email.user, // Отправитель
-            to: config.email.to, // Ваша личная почта для получения уведомлений
+            //from: config.email.user, // Отправитель
+            //to: config.email.to, // Ваша личная почта для получения уведомлений
+            from: emailConfig.user,
+            to: process.env.EMAIL_TO,
             subject: `Новое подтверждение присутствия от ${name}`,
             text: emailText
         };
@@ -151,8 +153,8 @@ app.post('/api/rsvp', async(req, res) => {
 async function testEmail() {
     try {
         await transporter.sendMail({
-            from: config.email.user,
-            to: config.email.to,
+            from: process.env.EMAIL_USER,
+            to: process.env.EMAIL_TO,
             subject: 'Тестовое письмо',
             text: 'Это тестовое письмо для проверки настроек почты'
         });
