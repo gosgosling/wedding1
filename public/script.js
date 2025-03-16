@@ -56,7 +56,7 @@ document.getElementById('rsvpForm').addEventListener('submit', async function(e)
             },
             body: JSON.stringify(formData)
         });*/
-        const response = await fetch('/api/rsvp', {
+        const response = await fetch('https://weddingvk.onrender.com/api/rsvp', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
