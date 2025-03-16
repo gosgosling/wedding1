@@ -49,7 +49,14 @@ document.getElementById('rsvpForm').addEventListener('submit', async function(e)
         submitButton.textContent = 'Отправка...';
 
         // Отправляем данные
-        const response = await fetch('http://localhost:3000/api/rsvp', {
+        /*const response = await fetch('http://localhost:3000/api/rsvp', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(formData)
+        });*/
+        const response = await fetch('/api/rsvp', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
