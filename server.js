@@ -17,8 +17,9 @@ const TELEGRAM_CHAT_ID = process.env.TELEGRAM_CHAT_ID;
 
 // Разрешаем запросы с вашего домена
 app.use(cors({
-    origin: ['https://weddingvk.onrender.com', 'http://localhost:3000'],
+    origin: '*',
     methods: ['GET', 'POST'],
+    allowedHeaders: ['Content-Type', 'Accept'],
     credentials: true
 }));
 
