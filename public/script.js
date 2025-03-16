@@ -24,6 +24,13 @@ document.getElementById('rsvpForm').addEventListener('submit', async function(e)
     const form = e.target;
     const submitButton = form.querySelector('button[type="submit"]');
     const originalButtonText = submitButton.textContent;
+    const guestsInput = form.querySelector('input[type="number"]');
+    
+    const guestsCount = parseInt(guestsInput.value);
+    if (isNaN(guestsCount) || guestsCount < 1 || guestsCount > 10) {
+        showMessage('error', 'Пожалуйста, укажите корректное количество гостей (от 1 до 10)');
+        return;
+    }
 
     // Данные формы
     const formData = {
@@ -71,6 +78,12 @@ document.getElementById('rsvpForm').addEventListener('submit', async function(e)
     }
 });
 
+// Добавляем обработчик ввода для поля количества гостей
+document.querySelector('input[type="number"]').addEventListener('input', function(e) {
+    const value = parseInt(this.value);
+    if (value < 1) this.value = 1;
+    if (value > 10) this.value = 10;
+});
 // Функция для показа сообщений
 function showMessage(type, text) {
     const messageDiv = document.createElement('div');
