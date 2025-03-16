@@ -1,4 +1,4 @@
-require('dotenv').config();
+//require('dotenv').config();
 
 const express = require('express');
 const cors = require('cors');
@@ -7,7 +7,7 @@ const path = require('path');
 const app = express();
 const port = 3000;
 const nodemailer = require('nodemailer'); // Добавляем nodemailer
-//const config  = require('./config');
+const config  = require('./config');
 
 
 // Middleware
@@ -16,7 +16,7 @@ app.use(express.json());
 app.use(express.static('public'));
 
 
-const emailConfig = {
+/*const emailConfig = {
     user: process.env.EMAIL_USER,
     pass: process.env.EMAIL_PASSWORD,
     to: process.env.EMAIL_TO
@@ -30,9 +30,9 @@ const transporter = nodemailer.createTransport({
         user: emailConfig.user,
         pass: emailConfig.pass
     }
-});
+});*/
 
-/*const transporter = nodemailer.createTransport({
+const transporter = nodemailer.createTransport({
     host: 'smtp.yandex.ru', 
     port: 465,
     secure: true,
@@ -40,7 +40,7 @@ const transporter = nodemailer.createTransport({
         user: config.email.user, 
         pass: config.email.pass 
     }
-});*/
+});
 
 
 // Путь к файлу с данными
@@ -97,10 +97,10 @@ app.post('/api/rsvp', async(req, res) => {
 
         // Настройки письма
         const mailOptions = {
-            //from: config.email.user, // Отправитель
-            //to: config.email.to, // Ваша личная почта для получения уведомлений
-            from: emailConfig.user,
-            to: emailConfig.to,
+            from: config.email.user, // Отправитель
+            to: config.email.to, // Ваша личная почта для получения уведомлений
+            //from: emailConfig.user,
+            //to: emailConfig.to,
             subject: `Новое подтверждение присутствия от ${name}`,
             text: emailText
         };
@@ -153,8 +153,8 @@ app.post('/api/rsvp', async(req, res) => {
 async function testEmail() {
     try {
         await transporter.sendMail({
-            from: emailConfig.user,
-            to: emailConfig.to,
+            from: config.email.user,
+            to: config.email.to,
             subject: 'Тестовое письмо',
             text: 'Это тестовое письмо для проверки настроек почты'
         });
