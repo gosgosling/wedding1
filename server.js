@@ -15,8 +15,6 @@ const TELEGRAM_CHAT_ID = process.env.TELEGRAM_CHAT_ID;
 //const bot = new TelegramBot(config.tg.token, { polling: false });
 //const TELEGRAM_CHAT_ID = config.tg.chatid;
 
-const cors = require('cors');
-
 // Разрешаем запросы с вашего домена
 app.use(cors({
     origin: ['https://weddingvk.onrender.com', 'http://localhost:3000'],
