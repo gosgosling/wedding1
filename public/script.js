@@ -35,7 +35,7 @@ document.getElementById('rsvpForm').addEventListener('submit', async function(e)
     // Данные формы
     const formData = {
         name: form.querySelector('input[type="text"]').value,
-        guests: form.querySelector('input[type="number"]').value,
+        guests: parseInt(form.querySelector('input[type="number"]').value),
         comments: form.querySelector('textarea').value,
         ceremony_attendance: form.querySelector('#ceremony_attendance').checked,
         banquet_attendance: form.querySelector('#banquet_attendance').checked

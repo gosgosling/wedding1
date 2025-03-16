@@ -1,5 +1,6 @@
 //require('dotenv').config();
-
+const TelegramBot = require('node-telegram-bot-api');
+//require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
 const fs = require('fs').promises;
@@ -9,11 +10,21 @@ const port = 3000;
 const nodemailer = require('nodemailer'); // Добавляем nodemailer
 const config  = require('./config');
 
+const bot = new TelegramBot(process.env.TELEGRAM_BOT_TOKEN, { polling: false });
+const TELEGRAM_CHAT_ID = process.env.TELEGRAM_CHAT_ID;
+//const bot = new TelegramBot(config.tg.token, { polling: false });
+//const TELEGRAM_CHAT_ID = config.tg.chatid;
 
-// Middleware
+// Важно: добавьте эти middleware перед роутами
 app.use(cors());
 app.use(express.json());
 app.use(express.static('public'));
+app.use(express.urlencoded({ extended: true }));
+
+// Middleware
+//app.use(cors());
+//app.use(express.json());
+
 
 
 /*const emailConfig = {
@@ -32,7 +43,7 @@ const transporter = nodemailer.createTransport({
     }
 });*/
 
-const transporter = nodemailer.createTransport({
+/*const transporter = nodemailer.createTransport({
     host: 'smtp.yandex.ru', 
     port: 465,
     secure: true,
@@ -40,7 +51,7 @@ const transporter = nodemailer.createTransport({
         user: config.email.user, 
         pass: config.email.pass 
     }
-});
+});*/
 
 
 // Путь к файлу с данными
@@ -57,14 +68,32 @@ async function ensureDataDirectory() {
     }
 }
 
+
+function formatRsvpMessage(data) {
+    return `
+🎉 Новое подтверждение присутствия!
+
+👤 Имя: ${data.name}
+👥 Количество гостей: ${data.guests}
+
+🎭 Присутствие на церемонии: ${data.ceremony_attendance ? '✅' : '❌'}
+🍽 Присутствие на банкете: ${data.banquet_attendance ? '✅' : '❌'}
+
+💭 Комментарии: ${data.comments || 'Нет комментариев'}
+
+📅 Дата: ${new Date().toLocaleString('ru-RU')}
+    `;
+}
+
+
 // Обработка POST запроса для формы RSVP
 app.post('/api/rsvp', async(req, res) => {
     try {
         console.log('Received data:', req.body);
         const { name, guests, comments, ceremony_attendance, banquet_attendance } = req.body;
 
-        console.log('Ceremony attendance:', ceremony_attendance);
-        console.log('Banquet attendance:', banquet_attendance);
+        //console.log('Ceremony attendance:', ceremony_attendance);
+        //console.log('Banquet attendance:', banquet_attendance);
 
         // Валидация
         if (!name || !guests) {
@@ -81,7 +110,7 @@ app.post('/api/rsvp', async(req, res) => {
             });
         }
 
-        const emailText = `
+        /*const emailText = `
             Новое подтверждение присутствия!
 
             Имя: ${name}
@@ -106,7 +135,7 @@ app.post('/api/rsvp', async(req, res) => {
         };
 
         // Отправляем письмо
-        await transporter.sendMail(mailOptions);
+        await transporter.sendMail(mailOptions);*/
 
 
         // Получаем существующие данные
@@ -135,6 +164,9 @@ app.post('/api/rsvp', async(req, res) => {
 
         // Сохраняем обновленные данные
         await fs.writeFile(dataFile, JSON.stringify(rsvpData, null, 2));
+        
+        const message = formatRsvpMessage(newRsvp);
+        await bot.sendMessage(TELEGRAM_CHAT_ID, message, { parse_mode: 'HTML' });
 
         res.json({
             success: true,
@@ -173,4 +205,4 @@ async function startServer() {
 }
 
 startServer();
-testEmail();
+//testEmail();
