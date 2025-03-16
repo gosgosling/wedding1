@@ -23,7 +23,7 @@ app.use(cors({
 }));
 
 // Важно: добавьте эти middleware перед роутами
-app.use(cors());
+//app.use(cors());
 app.use(express.json());
 app.use(express.static('public'));
 app.use(express.urlencoded({ extended: true }));
