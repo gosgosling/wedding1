@@ -12,7 +12,7 @@ body {
 
 .hero {
     height: 100vh;
-    background: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), url('wedding-bg.jpg') center/cover;
+    background: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), url('love story-46.jpg') center 40% /cover;
     display: flex;
     flex-direction: column;
     justify-content: center;
